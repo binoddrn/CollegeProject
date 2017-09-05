@@ -54,7 +54,9 @@
         <activity
             android:name=".MyApp"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".College_Entry_Form"></activity>
+        <activity android:name=".College_Entry_Form">
+
+        </activity>
         <activity android:name=".Display_List" />
         <activity android:name=".Teachers" />
         <activity android:name=".Teacher_Detail" />

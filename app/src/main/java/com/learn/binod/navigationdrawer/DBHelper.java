@@ -57,9 +57,8 @@ public class DBHelper extends SQLiteOpenHelper {
     }
     public Cursor getCollegeName(){
         SQLiteDatabase db=this.getWritableDatabase();
-        Cursor res=db.rawQuery("select COLLEGENAME from"+TABLE_NAME,null);
+        Cursor res=db.rawQuery("select COLLEGENAME from " +TABLE_NAME,null);
         return res;
-
     }
 
     public boolean updateData(String id,String collegename,String address,String description,String phonenumber) {

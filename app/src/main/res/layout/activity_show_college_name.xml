@@ -9,8 +9,10 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.learn.binod.navigationdrawer.ShowCollegeName">
-    <ListView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-    </ListView>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerview"
+        android:scrollbars="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
 </RelativeLayout>
