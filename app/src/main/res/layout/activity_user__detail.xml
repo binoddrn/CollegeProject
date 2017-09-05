@@ -10,4 +10,133 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.learn.binod.navigationdrawer.User_Detail">
 
+    <TextView
+        android:text="ID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="13dp"
+        android:id="@+id/textView_ID"
+        android:layout_alignBaseline="@+id/editText_ID"
+        android:layout_alignBottom="@+id/editText_ID"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="10"
+        android:id="@+id/editText_ID"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:text="Full Name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView_CollegeName"
+        android:layout_alignBaseline="@+id/editText_FullName"
+        android:layout_alignBottom="@+id/editText_FullName"
+        android:layout_alignStart="@+id/textViewAddress" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/editText_FullName"
+        android:layout_below="@+id/editText_ID"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:text="Address"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editText_FullName"
+        android:layout_alignStart="@+id/textView_ID"
+        android:layout_marginTop="12dp"
+        android:id="@+id/textViewAddress" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/editText_Address"
+        android:layout_alignTop="@+id/textViewAddress"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:text="Email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editText_Address"
+        android:layout_alignStart="@+id/textViewAddress"
+        android:id="@+id/textView_Email" />
+
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:layout_alignTop="@+id/textView_description"
+        android:layout_below="@+id/editText_Address"
+        android:layout_alignParentEnd="true"
+        android:id="@+id/editText_Email" />
+
+    <TextView
+        android:text="Phone Number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView_PhoneNumber"
+        android:layout_alignBaseline="@+id/editText_PhoneNumber"
+        android:layout_alignBottom="@+id/editText_PhoneNumber"
+        android:layout_alignStart="@+id/textViewAddress" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="10"
+        android:id="@+id/editText_PhoneNumber"
+        android:layout_below="@+id/editText_Email"
+        android:layout_alignParentEnd="true" />
+
+    <Button
+        android:text="ViewAll"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/button_viewALL"
+        android:layout_alignBaseline="@+id/button_delete"
+        android:layout_alignBottom="@+id/button_delete"
+        android:layout_alignStart="@+id/button_update" />
+
+
+    <Button
+        android:text="Delete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="49dp"
+        android:id="@+id/button_delete"
+        android:layout_below="@+id/button_add"
+        android:layout_toEndOf="@+id/textView_ID" />
+
+    <Button
+        android:text="ADD"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/button_add"
+        android:layout_marginTop="80dp"
+        android:layout_below="@+id/editText_PhoneNumber"
+        android:layout_alignStart="@+id/button_delete" />
+
+    <Button
+        android:text="Update"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="39dp"
+        android:id="@+id/button_update"
+        android:layout_marginTop="10dp"
+        android:layout_alignTop="@+id/button_add"
+        android:layout_alignParentEnd="true" />
 </RelativeLayout>
