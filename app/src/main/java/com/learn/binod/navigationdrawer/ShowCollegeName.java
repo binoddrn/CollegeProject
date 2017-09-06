@@ -13,8 +13,6 @@ import java.util.List;
 public class ShowCollegeName extends AppCompatActivity {
     DBHelper mydb;
     private Cursor res;
-    private ListView listView;
-    private List<DBHelper> helpers;
     private CollegeAdapter adapter;
     private RecyclerView reclyclerview;
 
@@ -30,14 +28,12 @@ public class ShowCollegeName extends AppCompatActivity {
         reclyclerview.setLayoutManager(layoutManager);
         reclyclerview.setHasFixedSize(true);
 
-
-
-
         show();
     }
 
     private void show(){
-        res= mydb.getCollegeName();
+     //   res= mydb.getCollegeName();
+        res=mydb.getAllData();
         if (res.getCount()==0){
             showMessage("Error","Nothing Found");
             return;
@@ -46,7 +42,10 @@ public class ShowCollegeName extends AppCompatActivity {
        // StringBuffer buffer=new StringBuffer();
         while (res.moveToNext()){
       //      buffer.append("CollegeName: "+res.getString(0));
-            arrayList.add("Collegename: "+ res.getString(0));
+            arrayList.add("Collegename: "+ res.getString(1));
+        //    arrayList.add("Address" + res.getString(2));
+       //     arrayList.add("Phone Number" + res.getString(3));
+       //     arrayList.add("Description" + res.getString(4));
 
         }
         adapter=new CollegeAdapter(arrayList,ShowCollegeName.this);
