@@ -1,7 +1,6 @@
-package Adapter;
+package com.learn.binod.navigationdrawer;
 
 import android.content.Context;
-import android.content.pm.LabeledIntent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,17 +8,15 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.learn.binod.navigationdrawer.DBHelper;
-import com.learn.binod.navigationdrawer.R;
-
-import java.util.List;
+import java.util.ArrayList;
 
 /**
  * Created by binod on 9/5/2017.
  */
 
 public class CollegeAdapter extends RecyclerView.Adapter<CollegeAdapter.MyViewHolder>{
-    private List<DBHelper> helpers;
+
+    private ArrayList<String> arrayList;
     Context context;
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -27,19 +24,19 @@ public class CollegeAdapter extends RecyclerView.Adapter<CollegeAdapter.MyViewHo
         return new MyViewHolder(view);
     }
 
-    public CollegeAdapter(List<DBHelper> helpers, Context context) {
-        this.helpers = helpers;
+    public CollegeAdapter(ArrayList arrayList, Context context) {
+        this.arrayList=arrayList;
         this.context = context;
     }
 
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
-        holder.collegename.setText(helpers.get(position).getDatabaseName());
+        holder.collegename.setText(arrayList.get(position));
     }
 
     @Override
     public int getItemCount() {
-        return 0;
+        return arrayList.size();
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder{

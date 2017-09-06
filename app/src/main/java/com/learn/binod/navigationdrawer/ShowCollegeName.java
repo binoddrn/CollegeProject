@@ -1,6 +1,5 @@
 package com.learn.binod.navigationdrawer;
 
-import android.app.AlertDialog;
 import android.database.Cursor;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -8,9 +7,8 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.widget.ListView;
 
+import java.util.ArrayList;
 import java.util.List;
-
-import Adapter.CollegeAdapter;
 
 public class ShowCollegeName extends AppCompatActivity {
     DBHelper mydb;
@@ -44,12 +42,17 @@ public class ShowCollegeName extends AppCompatActivity {
             showMessage("Error","Nothing Found");
             return;
         }
-        StringBuffer buffer=new StringBuffer();
+        ArrayList<String> arrayList = new ArrayList();
+       // StringBuffer buffer=new StringBuffer();
         while (res.moveToNext()){
-            buffer.append("CollegeName: "+res.getString(0));
+      //      buffer.append("CollegeName: "+res.getString(0));
+            arrayList.add("Collegename: "+ res.getString(0));
 
         }
-        adapter=new CollegeAdapter(buffer,ShowCollegeName.this);
+        adapter=new CollegeAdapter(arrayList,ShowCollegeName.this);
+        reclyclerview.setAdapter(adapter);
+    //    adapter=new CollegeAdapter(buffer,ShowCollegeName.this);
+    //    reclyclerview.setAdapter(adapter);
 
        // showMessage("Data",buffer.toString());
     }
@@ -59,7 +62,5 @@ public class ShowCollegeName extends AppCompatActivity {
       //  builder.setTitle(title);
       //  builder.setMessage(Message);
      //   builder.show();
-
-
     }
 }
