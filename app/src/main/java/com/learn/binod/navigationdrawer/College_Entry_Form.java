@@ -97,7 +97,7 @@ public class College_Entry_Form extends AppCompatActivity {
 
 
     public void viewAll() {
-        btnviewall.setOnClickListener(
+       /* btnviewall.setOnClickListener(
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -120,7 +120,7 @@ public class College_Entry_Form extends AppCompatActivity {
                         showMessage("Data",buffer.toString());
                     }
                 }
-        );
+        );*/
     }
 
     public void showMessage(String title,String Message){

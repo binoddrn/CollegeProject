@@ -6,6 +6,8 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import java.util.ArrayList;
+
 /**
  * Created by binod on 6/16/2017.
  */
@@ -50,11 +52,11 @@ public class DBHelper extends SQLiteOpenHelper {
             return true;
     }
 
-    public Cursor getAllData() {
+  /*  public Cursor getAllData() {
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor res = db.rawQuery("select * from "+TABLE_NAME,null);
         return res;
-    }
+    }*/
     public Cursor getCollegeName(){
         SQLiteDatabase db=this.getWritableDatabase();
         Cursor res=db.rawQuery("select COLLEGENAME from " +TABLE_NAME,null);
@@ -71,6 +73,29 @@ public class DBHelper extends SQLiteOpenHelper {
         contentValues.put(COL_5,phonenumber);
         db.update(TABLE_NAME, contentValues, "ID = ?",new String[] { id });
         return true;
+    }
+
+    public ArrayList<College>
+    getAllData()
+    {
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor res = db.rawQuery("select * from "+TABLE_NAME,null);
+        ArrayList<College> arrayList = new ArrayList<>();
+        if (res.getCount()>0) {
+            res.moveToFirst();
+            if (res.moveToFirst()){
+                do {
+                    College college = new College();
+                    college.setId(res.getString(0));
+                    college.setCollegename(res.getString(1));
+                    college.setAddress(res.getString(2));
+                    college.setDescription(res.getString(3));
+                    arrayList.add(college);
+                } while (res.moveToNext());
+            }
+        }
+        res.close();
+        return arrayList;
     }
 
     public Integer deleteData (String id) {

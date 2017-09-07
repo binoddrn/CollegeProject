@@ -8,12 +8,7 @@ public class College {
     String id,collegename,address,description,phonenumber;
     private String key;
 
-    public College(String id, String collegename, String address, String description, String phonenumber) {
-        this.id = id;
-        this.collegename = collegename;
-        this.address = address;
-        this.description = description;
-        this.phonenumber = phonenumber;
+    public College(){
     }
 
     public String getId() {

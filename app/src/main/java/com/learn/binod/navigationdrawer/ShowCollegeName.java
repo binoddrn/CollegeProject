@@ -12,18 +12,19 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ShowCollegeName extends AppCompatActivity {
-    DBHelper mydb;
+    DBHelper dbHelper;
     private Cursor res;
     private CollegeAdapter adapter;
     private RecyclerView reclyclerview;
+    ArrayList<College> arrayList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_show_college_name);
-        mydb=new DBHelper(this);
+        dbHelper=new DBHelper(this);
 
-
+        arrayList = new ArrayList();
         reclyclerview=(RecyclerView)findViewById(R.id.recyclerview);
         RecyclerView.LayoutManager layoutManager=new LinearLayoutManager(this);
         reclyclerview.setLayoutManager(layoutManager);
@@ -33,36 +34,9 @@ public class ShowCollegeName extends AppCompatActivity {
     }
 
     private void show(){
-     //   res= mydb.getCollegeName();
-        res=mydb.getAllData();
-        if (res.getCount()==0){
-            showMessage("Error","Nothing Found");
-            return;
-        }
-        ArrayList<College> arrayList = new ArrayList();
-       // StringBuffer buffer=new StringBuffer();
-        while (res.moveToNext()){
-
-
-
-
-
-
-
-      //      buffer.append("CollegeName: "+res.getString(0));
-         //   arrayList.add(res.getString(res.getColumnIndex("COLLEGENAME")));
-
-     // String s=      res.getString(res.getColumnIndex("COLLEGENAME"));
-           // Log.e("COLLEGNAM",s);
-        //    arrayList.add("Address" + res.getString(2));
-       //     arrayList.add("Phone Number" + res.getString(3));
-       //     arrayList.add("Description" + res.getString(4));
-
-        }
-        adapter=new CollegeAdapter(arrayList,ShowCollegeName.this,mydb);
+        arrayList=dbHelper.getAllData();
+        adapter=new CollegeAdapter(arrayList,ShowCollegeName.this,dbHelper);
         reclyclerview.setAdapter(adapter);
-    //    adapter=new CollegeAdapter(buffer,ShowCollegeName.this);
-    //    reclyclerview.setAdapter(adapter);
 
        // showMessage("Data",buffer.toString());
     }

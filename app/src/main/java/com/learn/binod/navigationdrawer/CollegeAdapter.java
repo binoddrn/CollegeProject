@@ -45,18 +45,7 @@ public class CollegeAdapter extends RecyclerView.Adapter<CollegeAdapter.MyViewHo
        holder.root.setOnClickListener(new View.OnClickListener() {
            @Override
             public void onClick(View v) {
-      //         mydb=new DBHelper(this);
-                 cursor=mydb.getAllData();
-           //     arrayList.add("description"+cursor.getString(0).toString());
-          //  String g= cursor.getString(1).toString();
-           //   Log.e("id is ",g);
                 context.startActivity(new Intent(context,CollegeDetail.class).putExtra("id",arrayList));
-
-            //    Intent intent=new Intent(this.context,CollegeDetail.class);
-             //   intent.putExtra("Description",cursor.getString(2));
-               // intent.putExtra("Address",cursor.getString(3));
-               // intent.putExtra("PhoneNumber",cursor.getString(4));
-              //  this.context.startActivity(intent);
            }
         });
     }
@@ -74,7 +63,5 @@ public class CollegeAdapter extends RecyclerView.Adapter<CollegeAdapter.MyViewHo
             collegename=(TextView)itemView.findViewById(R.id.collegename);
             root=(LinearLayout)itemView.findViewById(R.id.root);
         }
-
-
     }
 }
