@@ -49,7 +49,7 @@ public class CollegeEntryFormAdapter extends BaseAdapter {
 
         }
         TextView tvCollegeName = (TextView) convertView.findViewById(R.id.tv_name);
-        tvCollegeName.setText(college.getName());
+        tvCollegeName.setText(college.getCollegename());
         TextView tvaddress = (TextView) convertView.findViewById(R.id.tv_address);
         tvaddress.setText(college.getAddress());
         TextView tvdesc = (TextView) convertView.findViewById(R.id.tv_description);

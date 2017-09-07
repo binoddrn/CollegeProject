@@ -5,11 +5,15 @@ package com.learn.binod.navigationdrawer;
  */
 
 public class College {
-    String id,name,address,description;
+    String id,collegename,address,description,phonenumber;
     private String key;
 
-    public College() {
-
+    public College(String id, String collegename, String address, String description, String phonenumber) {
+        this.id = id;
+        this.collegename = collegename;
+        this.address = address;
+        this.description = description;
+        this.phonenumber = phonenumber;
     }
 
     public String getId() {
@@ -20,12 +24,20 @@ public class College {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getCollegename() {
+        return collegename;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setCollegename(String collegename) {
+        this.collegename = collegename;
+    }
+
+    public String getPhonenumber() {
+        return phonenumber;
+    }
+
+    public void setPhonenumber(String phonenumber) {
+        this.phonenumber = phonenumber;
     }
 
     public String getAddress() {

@@ -15,7 +15,7 @@ import java.util.ArrayList;
 /**
  * Created by binod on 4/17/2017.
  */
-public class MyAdapter extends RecyclerView.Adapter<MyViewHolder>{
+/*public class MyAdapter extends RecyclerView.Adapter<MyViewHolder>{
     Context c;
     ArrayList<College> colleges;
     DatabaseReference db;
@@ -46,3 +46,4 @@ public class MyAdapter extends RecyclerView.Adapter<MyViewHolder>{
         return colleges.size();
     }
 }
+*/

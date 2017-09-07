@@ -15,7 +15,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 //import java.util.ArrayList;
 
-public class CollegeForm extends AppCompatActivity {
+/*public class CollegeForm extends AppCompatActivity {
     DatabaseReference db;
     FirebaseHelper helper;
     MyAdapter adapter;
@@ -49,22 +49,19 @@ public class CollegeForm extends AppCompatActivity {
         addressTxt = (EditText) findViewById(R.id.addressEditText);
         descTxt = (EditText) findViewById(R.id.descEditText);
         saveBtn = (Button) findViewById(R.id.saveBtn);
-        updateBtn= (Button) findViewById(R.id.updateBtn);
+        updateBtn = (Button) findViewById(R.id.updateBtn);
 
 
-
-       updateBtn.setOnClickListener(new View.OnClickListener() {
+        updateBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String name = nameEditTxt.getText().toString();
                 String address = addressTxt.getText().toString();
                 String desc = descTxt.getText().toString();
 
-                updateUser(name,address,desc);
+                //    updateUser(name,address,desc);
             }
         });
-
-
 
 
         saveBtn.setOnClickListener(new View.OnClickListener() {
@@ -75,8 +72,8 @@ public class CollegeForm extends AppCompatActivity {
                 String desc = descTxt.getText().toString();
 
                 //SET DATA
-                College c = new College();
-                c.setName(name);
+                College c = new College(CollegeForm.this);
+                c.setCollegename(name);
                 c.setAddress(address);
                 c.setDescription(desc);
 
@@ -88,7 +85,7 @@ public class CollegeForm extends AppCompatActivity {
                         descTxt.setText("");
 
                         adapter = new MyAdapter(CollegeForm.this, helper.retrieve());
-                       rv.setAdapter(adapter);
+                        rv.setAdapter(adapter);
                     }
                 } else {
                     Toast.makeText(CollegeForm.this, "Name Must Not Be Empty", Toast.LENGTH_SHORT).show();
@@ -97,7 +94,8 @@ public class CollegeForm extends AppCompatActivity {
         });
 
     }
-    private void updateUser(String name, String address,String description) {
+}
+   private void updateUser(String name, String address,String description) {
        //  updating the user via child nodes
         if (!TextUtils.isEmpty(name))
           db.child("colleges").child("address").setValue(name);
@@ -109,4 +107,4 @@ public class CollegeForm extends AppCompatActivity {
 }
 
 
-
+*/

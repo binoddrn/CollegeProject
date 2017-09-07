@@ -9,7 +9,7 @@ import static com.learn.binod.navigationdrawer.DBHelper.COL_2;
 import static com.learn.binod.navigationdrawer.DBHelper.TABLE_NAME;
 
 
-public class Display_List extends AppCompatActivity {
+/*public class Display_List extends AppCompatActivity {
     DBHelper myDb;
     ListView mistView;
     @Override
@@ -46,4 +46,5 @@ public class Display_List extends AppCompatActivity {
         mistView.setAdapter(collegeEntryFormAdapter);
     }
 }
+*/
 

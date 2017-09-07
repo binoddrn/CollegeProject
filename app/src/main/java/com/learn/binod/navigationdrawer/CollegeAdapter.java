@@ -19,7 +19,7 @@ import java.util.ArrayList;
 
 public class CollegeAdapter extends RecyclerView.Adapter<CollegeAdapter.MyViewHolder>{
 
-    private ArrayList<String> arrayList;
+    private ArrayList<College> arrayList;
     Context context;
     Cursor cursor;
     DBHelper mydb;
@@ -41,13 +41,13 @@ public class CollegeAdapter extends RecyclerView.Adapter<CollegeAdapter.MyViewHo
 
     @Override
     public void onBindViewHolder(MyViewHolder holder, final int position) {
-        holder.collegename.setText(arrayList.get(position));
+        holder.collegename.setText(arrayList.get(position).getCollegename());
        holder.root.setOnClickListener(new View.OnClickListener() {
            @Override
             public void onClick(View v) {
       //         mydb=new DBHelper(this);
                  cursor=mydb.getAllData();
-                arrayList.add("description"+cursor.getString(0));
+           //     arrayList.add("description"+cursor.getString(0).toString());
           //  String g= cursor.getString(1).toString();
            //   Log.e("id is ",g);
                 context.startActivity(new Intent(context,CollegeDetail.class).putExtra("id",arrayList));
