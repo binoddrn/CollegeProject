@@ -1,12 +1,20 @@
 package com.learn.binod.navigationdrawer;
 
+
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
 
+import static com.learn.binod.navigationdrawer.DBHelper.TABLE_NAME;
+
 public class CollegeDetail extends AppCompatActivity {
+    SQLiteDatabase db;
     TextView description,address,phonenumber;
+    DBHelper dbHelper;
     String desc,addr,phno,id;
+    DBHelper dbhelper;
 
 
     @Override
@@ -18,16 +26,10 @@ public class CollegeDetail extends AppCompatActivity {
         address=(TextView)findViewById(R.id.AddressOfCollege);
         phonenumber=(TextView)findViewById(R.id.PhoneNumberOfCollege);
 
-       id =getIntent().getStringExtra("id");
-
-     //   addr=getIntent().getStringExtra("Address");
-     //   phno=getIntent().getStringExtra("PhoneNumber");
-        description.setText(desc);
-       // address.setText(addr);
-     //   phonenumber.setText(phno);
-       // description.setText("Description"+getIntent().getStringExtra("Description"));
-     //   address.setText("Address"+getIntent().getStringExtra("Address"));
-       // phonenumber.setText("PhoneNumber : "+getIntent().getStringExtra("PhoneNumber"));
-
+        id =getIntent().getStringExtra("id");
+        College college=new DBHelper(CollegeDetail.this).getDetailFromId(id);
+        description.setText(college.getDescription());
+        address.setText(college.getAddress());
+        phonenumber.setText(college.getPhonenumber());
     }
 }

@@ -98,6 +98,23 @@ public class DBHelper extends SQLiteOpenHelper {
         return arrayList;
     }
 
+    public College getDetailFromId(String id) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor res = db.rawQuery("select * from " + TABLE_NAME + " where ID='"+id+"'", null);
+        College college = new College();
+        if (res.getCount() > 0) {
+            if (res.moveToFirst()) {
+                college.setId(res.getString(0));
+                college.setCollegename(res.getString(1));
+                college.setAddress(res.getString(2));
+                college.setDescription(res.getString(3));
+            }
+        }
+        res.close();
+        return college;
+    }
+
+
     public Integer deleteData (String id) {
         SQLiteDatabase db = this.getWritableDatabase();
         return db.delete(TABLE_NAME, "ID = ?",new String[] {id});

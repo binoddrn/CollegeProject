@@ -54,7 +54,9 @@
         <activity
             android:name=".MyApp"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".College_Entry_Form"></activity>
+        <activity android:name=".College_Entry_Form">
+
+        </activity>
         <activity android:name=".Display_List" />
         <activity android:name=".Teachers" />
         <activity android:name=".Teacher_Detail" />
@@ -85,10 +87,11 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
         <activity android:name=".CollegeDetail">
-
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.learn.binod.navigationdrawer.ShowCollegeName" />
         </activity>
     </application>
 
