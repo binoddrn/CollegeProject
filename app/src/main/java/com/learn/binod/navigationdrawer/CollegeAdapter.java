@@ -45,7 +45,7 @@ public class CollegeAdapter extends RecyclerView.Adapter<CollegeAdapter.MyViewHo
        holder.root.setOnClickListener(new View.OnClickListener() {
            @Override
             public void onClick(View v) {
-                context.startActivity(new Intent(context,CollegeDetail.class).putExtra("id",arrayList));
+                context.startActivity(new Intent(context,CollegeDetail.class).putExtra("id",arrayList.get(position).getId().toString()));
            }
         });
     }
