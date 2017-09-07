@@ -6,7 +6,8 @@ import android.widget.TextView;
 
 public class CollegeDetail extends AppCompatActivity {
     TextView description,address,phonenumber;
-    String desc,addr,phno;
+    String desc,addr,phno,id;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,12 +18,13 @@ public class CollegeDetail extends AppCompatActivity {
         address=(TextView)findViewById(R.id.AddressOfCollege);
         phonenumber=(TextView)findViewById(R.id.PhoneNumberOfCollege);
 
-        desc=getIntent().getStringExtra("description");
-        addr=getIntent().getStringExtra("Address");
-        phno=getIntent().getStringExtra("PhoneNumber");
+       id =getIntent().getStringExtra("id");
+
+     //   addr=getIntent().getStringExtra("Address");
+     //   phno=getIntent().getStringExtra("PhoneNumber");
         description.setText(desc);
-        address.setText(addr);
-        phonenumber.setText(phno);
+       // address.setText(addr);
+     //   phonenumber.setText(phno);
        // description.setText("Description"+getIntent().getStringExtra("Description"));
      //   address.setText("Address"+getIntent().getStringExtra("Address"));
        // phonenumber.setText("PhoneNumber : "+getIntent().getStringExtra("PhoneNumber"));

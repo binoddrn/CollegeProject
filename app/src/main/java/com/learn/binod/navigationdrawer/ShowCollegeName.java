@@ -48,7 +48,7 @@ public class ShowCollegeName extends AppCompatActivity {
        //     arrayList.add("Description" + res.getString(4));
 
         }
-        adapter=new CollegeAdapter(arrayList,ShowCollegeName.this);
+        adapter=new CollegeAdapter(arrayList,ShowCollegeName.this,mydb);
         reclyclerview.setAdapter(adapter);
     //    adapter=new CollegeAdapter(buffer,ShowCollegeName.this);
     //    reclyclerview.setAdapter(adapter);
